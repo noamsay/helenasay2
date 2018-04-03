@@ -14,7 +14,11 @@
                         <div class="modal-body">
                             <h2>{{ post.title }}</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+                            <div class="iframediv">
+<!--                               <iframe src="https://drive.google.com/file/d/1MuehPYBzTdyW6_6REIMunXU40vjx7MHr/preview" type='application/pdf' style="width:1200px; height:700px;" frameborder="0"></iframe> -->
+                              <iframe src="{{ post.pdf }}" type='application/pdf' style="width:1200px; height:700px;" frameborder="0"></iframe>
+                            </div>
+                            <!-- <img src="img/portfolio/{{ post.article }}" class="img-responsive img-centered" alt="{{ post.alt }}"> -->
                             {% if post.description %}
                                 <p>{{ post.description }}</p>
                             {% endif %}

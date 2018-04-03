@@ -84,11 +84,16 @@ header {
     text-align: center;
     color: #fff;
     background: #{{ site.color.primary }};
+    /*3 following lines added*/
+    background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(http://noamsay.odns.fr/images/helenasay-header.jpg) !important;
+    /*background-image: linear-gradient(-225deg, rgba(148,128,0,0.6), rgba(148,128,0,0.6) 50%), url(http://noamsay.odns.fr/images/helenasay-header.jpg) !important;*/
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header .container {
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 180px; /*updated from 50px*/
 }
 
 header img {
@@ -102,25 +107,27 @@ header .intro-text .name {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
+    padding-top: 250px; /* added */
 }
 
 header .intro-text .skills {
-    font-size: 1.25em;
+    font-size: 1.8em;
     font-weight: 300;
 }
 
 @media(min-width:768px) {
     header .container {
         padding-top: 200px;
-        padding-bottom: 100px;
+        padding-bottom: 220px; /*updated from 100*/
     }
 
     header .intro-text .name {
-        font-size: 4.75em;
+        font-size: 3em;   /* updated from 4.75 */
+        padding-top: 250px; /* added */
     }
 
     header .intro-text .skills {
-        font-size: 1.75em;
+        font-size: 2em; /* updated from 1.75 */
     }
 }
 
@@ -130,6 +137,7 @@ header .intro-text .skills {
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
+
     }
 
     .navbar-fixed-top .navbar-brand {
@@ -137,6 +145,7 @@ header .intro-text .skills {
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
+        color: #{{ site.color.primary }}; /*added*/
     }
 
     .navbar-fixed-top.navbar-shrink {
@@ -171,6 +180,12 @@ header .intro-text .skills {
     border: 0;
 }
 
+/*--ADDED--*/
+.navbar-default .navbar-nav>li>a {
+    color: #{{ site.color.primary }};
+}
+/*--------*/
+
 section {
     padding: 100px 0;
 }
@@ -181,7 +196,7 @@ section h2 {
 }
 
 section.success {
-    color: #fff;
+/*    color: #fff;*/
     background: #{{ site.color.primary }};
 }
 
@@ -195,6 +210,20 @@ section.success {
     }
 }
 
+.blue-section-title {
+  padding-bottom: 20px;
+  color: #{{ site.color.primary }};
+}
+
+.white-section-title {
+  color: white;
+  padding-bottom: 20px;
+}
+
+#portfolio-img:before {
+  filter: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%) !important;
+}
+
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -205,6 +234,7 @@ section.success {
     position: relative;
     margin: 0 auto;
     max-width: 400px;
+    /*background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%) !important;*/
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
@@ -212,7 +242,7 @@ section.success {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba({{ site.color.primary-rgb }},.9);
+    /*background: rgba({{ site.color.primary-rgb }},.9);*/
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -327,7 +357,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 footer {
-    color: #fff;
+    color: #{{ site.color.primary }}; /*color: #fff;*/
 }
 
 footer h3 {
@@ -455,3 +485,11 @@ footer .footer-below {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
+
+.iframediv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
